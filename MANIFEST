@@ -7,3 +7,5 @@ MANIFEST			This list of files
 MANIFEST.SKIP
 META.yml
 t/basic.t
+README
+examples.pl

@@ -1,6 +1,6 @@
 package Parse::Range;
 
-our $VERSION = 0.95;
+our $VERSION = 0.96;
 
 use strict;
 use warnings;
@@ -92,7 +92,7 @@ The one and only function this module provides. It accepts one or more strings w
 concatenated by a comma. Ranges, blocks and numbers are expected to be seperated
 by comma.
 
-Now the parsing takes place. Strings can be nested to any depth using parentheses.
+Now the parsing takes place. Strings can be nested to any depth using parentheses. 
 Not matching parentheses are being repaired if possible.
 Ranges can be expressed using the minus sign C<->. Use C<^> to exclude numbers or ranges from the current range. 
 Negative numbers are expressed using the minus sign. This is a valid expression C<-4--2> which will
@@ -109,15 +109,15 @@ two and 4. The result is C<1 3 5 6 7>.
 
   parse_range('^(2,4),1-7');
 
- This is the same example as above except that it is the other way round. The exception of two and four
- is a noop in this case because there is no range from which to exclude the numbers. The result is
- therefore C<1 2 3 4 5 6 7>.
+This is the same example as above except that it is the other way round. The exception of two and four
+is a noop in this case because there is no range from which to exclude the numbers. The result is
+therefore C<1 2 3 4 5 6 7>.
  
    parse_range('1-9,^(5-9,^(8-9))');
  
- This is a more advanced example. From a range from one to nine we exclude a block which consists
- of a range from five to nine from which eight and nine are excluded.
- The result is C<1 2 3 4 8 9>.
+This is a more advanced example. From a range from one to nine we exclude a block which consists
+of a range from five to nine from which eight and nine are excluded.
+The result is C<1 2 3 4 8 9>.
  
 
 =head1 AUTHOR
